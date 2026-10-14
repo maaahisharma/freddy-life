@@ -7,6 +7,12 @@ Explore an apartment and downtown, manage hunger and energy, and earn money work
 **Status:** Playable prototype in development.
 **Developer:** Mahi Sharma — Software Engineering student at UNB.
 
+## Play Online
+
+[Play Freddy Life](https://fantastic-horse-a95ccc.netlify.app)
+
+Desktop keyboard controls: arrow keys to move, E to interact, S to save.
+
 ## Features
 
 - Apartment and downtown locations
@@ -115,14 +121,12 @@ Automated tests have not been added yet.
 - Saves belong to the current browser and website origin
 - No accounts, backend, database, or multiplayer
 - A café shift must finish before saving
-- A hosted browser demo is not available yet
 
 ## Planned Improvements
 
 - Character sprites and improved environments
 - More locations, jobs, and activities
 - Automated tests for game rules and save validation
-- A hosted playable demo
 - Backend accounts and database-backed saves
 
 ## Development and Credits
