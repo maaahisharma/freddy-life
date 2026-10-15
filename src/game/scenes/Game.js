@@ -32,9 +32,8 @@ export class Game extends Scene {
             this.createCity();
         }
 
-        this.player = this.add.rectangle(
-            this.spawn.x, this.spawn.y, 32, 32, 0xffcc00
-      );
+      this.player = this.createPlayer(this.spawn.x, this.spawn.y);
+
         if (isNewSession && this.state.position) {
             const { x, y } = this.state.position;
             const b = this.bounds;
@@ -85,7 +84,57 @@ export class Game extends Scene {
             }
         ).setOrigin(1, 0).setDepth(100);
     }
+    createPlayer(x, y) {
+        // Coordinates below are relative to the character's center.
+        const leftShoe = this.add.rectangle(
+            -5, 13, 7, 6, 0x222222
+        );
 
+        const rightShoe = this.add.rectangle(
+            5, 13, 7, 6, 0x222222
+        );
+
+        const leftArm = this.add.rectangle(
+            -11, 4, 4, 12, 0xc98b62
+        );
+
+        const rightArm = this.add.rectangle(
+            11, 4, 4, 12, 0xc98b62
+        );
+
+        const shirt = this.add.rectangle(
+            0, 4, 18, 14, 0x3278c8
+        );
+
+        const head = this.add.circle(
+            0, -8, 7, 0xc98b62
+        );
+
+        const hair = this.add.rectangle(
+            0, -13, 10, 4, 0x30231d
+        );
+
+        const leftEye = this.add.circle(
+            -2.5, -7, 1, 0x222222
+        );
+
+        const rightEye = this.add.circle(
+            2.5, -7, 1, 0x222222
+        );
+
+        // Group the parts so they move as one character.
+        return this.add.container(x, y, [
+            leftShoe,
+            rightShoe,
+            leftArm,
+            rightArm,
+            shirt,
+            head,
+            hair,
+            leftEye,
+            rightEye
+        ]).setDepth(10);
+    }
     createHome() {
         this.cameras.main.setBackgroundColor('#252d38');
 
